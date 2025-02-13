@@ -1,0 +1,9 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://cslefwofi21ix"]
+
+[ext_resource type="FontFile" uid="uid://bxrkl2rkftodg" path="res://Assets/LeagueSpartan-Regular.ttf" id="1_ldalr"]
+
+[resource]
+base_font = ExtResource("1_ldalr")
+opentype_features = {
+1667329140: 0
+}

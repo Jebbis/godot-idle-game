@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ResourceItem" load_steps=2 format=3 uid="uid://7gr3hojif75f"]
+
+[ext_resource type="Script" path="res://resources/inventory/resource_item.gd" id="1_qk0t0"]
+
+[resource]
+script = ExtResource("1_qk0t0")
+item_name = "Wood"
+description = "Wood is wood"

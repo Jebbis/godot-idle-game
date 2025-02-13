@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8uari8wpy3ab"]
+
+[ext_resource type="Script" path="res://Scenes/UI/buy_building_button.gd" id="1_wj6j4"]
+[ext_resource type="PackedScene" uid="uid://bpt3sfstpclmd" path="res://Scenes/building.tscn" id="2_gonrj"]
+
+[node name="BuyButton" type="Button"]
+text = "Build
+"
+script = ExtResource("1_wj6j4")
+building_instance = ExtResource("2_gonrj")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

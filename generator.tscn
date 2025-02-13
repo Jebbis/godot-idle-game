@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl0aw7vxebq1h"]
+
+[ext_resource type="Script" path="res://addons/gaea/generators/2D/noise_generator/noise_generator.gd" id="1_hsjhs"]
+[ext_resource type="Resource" uid="uid://c5048nuw6lkw6" path="res://addons/generatorSettings.tres" id="2_8vg0r"]
+[ext_resource type="TileSet" uid="uid://bn0kwc8bn8cuk" path="res://tilesV2.tres" id="4_6kxly"]
+[ext_resource type="Script" path="res://addons/gaea/renderers/2D/tilemap_gaea_renderer.gd" id="7_uvjt4"]
+
+[node name="Node" type="Node"]
+
+[node name="NoiseGenerator" type="Node" parent="."]
+script = ExtResource("1_hsjhs")
+settings = ExtResource("2_8vg0r")
+tile_size = Vector2i(17, 17)
+
+[node name="TilemapGaeaRenderer" type="Node" parent="." node_paths=PackedStringArray("tile_map_layers", "generator")]
+script = ExtResource("7_uvjt4")
+tile_map_layers = [NodePath("../TileMapLayer")]
+generator = NodePath("../NoiseGenerator")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("4_6kxly")

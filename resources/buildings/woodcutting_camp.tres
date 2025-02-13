@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Building" load_steps=3 format=3 uid="uid://cp116gdamavnj"]
+
+[ext_resource type="Script" path="res://resources/buildings/building.gd" id="1_16en7"]
+[ext_resource type="Resource" uid="uid://7gr3hojif75f" path="res://resources/resourceItems/wood.tres" id="1_v0yfy"]
+
+[resource]
+script = ExtResource("1_16en7")
+allowed_tile_property = Array[int]([0, 1])
+allowed_tile_type = 0
+name = "Woodcutting Camp"
+description = "Produces wood"
+output_item = ExtResource("1_v0yfy")
+base_amount = 5
+output_amount = 5
+interval = 10.0

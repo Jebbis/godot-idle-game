@@ -1,0 +1,209 @@
+[gd_scene load_steps=10 format=3 uid="uid://dua458xt136rj"]
+
+[ext_resource type="Script" path="res://Scenes/ui.gd" id="1_qe4p8"]
+[ext_resource type="Texture2D" uid="uid://d1jsdn7q2trb4" path="res://Assets/resources/tile104.png" id="2_jehcm"]
+[ext_resource type="PackedScene" uid="uid://kbstdis7tbcc" path="res://Scenes/UI/select_building_type.tscn" id="3_x3yjw"]
+[ext_resource type="Texture2D" uid="uid://y4lb57n20bck" path="res://Assets/resources/tile091.png" id="4_u4qvl"]
+[ext_resource type="PackedScene" uid="uid://dmhdss41gtogx" path="res://Scenes/UI/tile_unlock_panel.tscn" id="5_7ogyn"]
+[ext_resource type="Texture2D" uid="uid://dngeq8ihbfq1d" path="res://Assets/resources/tile058.png" id="5_d7wha"]
+[ext_resource type="Texture2D" uid="uid://13b1fowe1yh5" path="res://Assets/resources/tile151.png" id="6_snws4"]
+[ext_resource type="PackedScene" uid="uid://d3n0e4uojhl03" path="res://Scenes/UI/ui_overlay.tscn" id="8_wf8c5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_peuax"]
+bg_color = Color(0.137255, 0.164706, 0.207843, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_qe4p8")
+tile_unlock_panel = ExtResource("5_7ogyn")
+tile_building_type = ExtResource("3_x3yjw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -279.0
+offset_top = 10.0
+offset_right = 279.0
+offset_bottom = 41.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Wood" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_peuax")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Wood"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -10.0
+offset_right = 28.0
+offset_bottom = 10.0
+grow_vertical = 2
+texture = ExtResource("2_jehcm")
+expand_mode = 1
+
+[node name="LabelWood" type="Label" parent="HBoxContainer/Wood"]
+layout_mode = 1
+offset_left = 43.0
+offset_right = 112.0
+offset_bottom = 20.0
+theme_override_font_sizes/font_size = 5
+text = "0
+"
+vertical_alignment = 1
+
+[node name="LabelWoodProduction" type="Label" parent="HBoxContainer/Wood"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = -20.0
+offset_right = 112.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.188235, 0.780392, 0.552941, 1)
+theme_override_font_sizes/font_size = 5
+text = "+ 12 / h"
+vertical_alignment = 1
+
+[node name="Ore" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_peuax")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Ore"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -10.0
+offset_right = 28.0
+offset_bottom = 10.0
+grow_vertical = 2
+texture = ExtResource("4_u4qvl")
+expand_mode = 1
+
+[node name="LabelOre" type="Label" parent="HBoxContainer/Ore"]
+layout_mode = 1
+offset_left = 43.0
+offset_right = 112.0
+offset_bottom = 20.0
+theme_override_font_sizes/font_size = 5
+text = "0
+"
+vertical_alignment = 1
+
+[node name="LabelOreProduction" type="Label" parent="HBoxContainer/Ore"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = -20.0
+offset_right = 112.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.188235, 0.780392, 0.552941, 1)
+theme_override_font_sizes/font_size = 5
+text = "+ 12 / h"
+vertical_alignment = 1
+
+[node name="Fish" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_peuax")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Fish"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -10.0
+offset_right = 28.0
+offset_bottom = 10.0
+grow_vertical = 2
+texture = ExtResource("5_d7wha")
+expand_mode = 1
+
+[node name="LabelFish" type="Label" parent="HBoxContainer/Fish"]
+layout_mode = 1
+offset_left = 43.0
+offset_right = 112.0
+offset_bottom = 20.0
+theme_override_font_sizes/font_size = 5
+text = "0
+"
+vertical_alignment = 1
+
+[node name="LabelFishProduction" type="Label" parent="HBoxContainer/Fish"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = -20.0
+offset_right = 112.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.188235, 0.780392, 0.552941, 1)
+theme_override_font_sizes/font_size = 5
+text = "+ 12 / h"
+vertical_alignment = 1
+
+[node name="Coins" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_peuax")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Coins"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -10.0
+offset_right = 28.0
+offset_bottom = 10.0
+grow_vertical = 2
+texture = ExtResource("6_snws4")
+expand_mode = 1
+
+[node name="LabelCoin" type="Label" parent="HBoxContainer/Coins"]
+layout_mode = 1
+offset_left = 43.0
+offset_right = 112.0
+offset_bottom = 20.0
+theme_override_font_sizes/font_size = 5
+text = "0
+"
+vertical_alignment = 1
+
+[node name="LabelCoinProduction" type="Label" parent="HBoxContainer/Coins"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = -20.0
+offset_right = 112.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.188235, 0.780392, 0.552941, 1)
+theme_override_font_sizes/font_size = 5
+text = "+ 12 / h"
+vertical_alignment = 1
+
+[node name="UIOverlay" parent="." instance=ExtResource("8_wf8c5")]

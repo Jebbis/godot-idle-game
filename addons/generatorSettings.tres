@@ -1,0 +1,203 @@
+[gd_resource type="Resource" script_class="NoiseGeneratorSettings" load_steps=28 format=3 uid="uid://c5048nuw6lkw6"]
+
+[ext_resource type="Script" path="res://addons/gaea/others/falloff_map.gd" id="1_1baww"]
+[ext_resource type="Script" path="res://addons/gaea/modifiers/2D/modifier_2d.gd" id="2_nthh4"]
+[ext_resource type="Script" path="res://addons/gaea/generators/2D/noise_generator/noise_generator_settings.gd" id="3_qhdsw"]
+[ext_resource type="Script" path="res://addons/gaea/generators/2D/noise_generator/noise_generator_data.gd" id="4_pm0av"]
+[ext_resource type="Script" path="res://addons/gaea/tile_info/tilemap_tile_info.gd" id="5_nafeu"]
+
+[sub_resource type="Image" id="Image_q4ptg"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 89, 89, 89, 89, 89, 89, 89, 89, 89, 0, 89, 228, 228, 228, 228, 228, 228, 228, 89, 0, 89, 228, 255, 255, 255, 255, 255, 228, 89, 0, 89, 228, 255, 255, 255, 255, 255, 228, 89, 0, 89, 228, 255, 255, 255, 255, 255, 228, 89, 0, 89, 228, 255, 255, 255, 255, 255, 228, 89, 0, 89, 228, 255, 255, 255, 255, 255, 228, 89, 0, 89, 228, 228, 228, 228, 228, 228, 228, 89, 0, 89, 89, 89, 89, 89, 89, 89, 89, 89),
+"format": "Lum8",
+"height": 10,
+"mipmaps": false,
+"width": 10
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_4dhmb"]
+image = SubResource("Image_q4ptg")
+
+[sub_resource type="Resource" id="Resource_rrreb"]
+script = ExtResource("1_1baww")
+texture = SubResource("ImageTexture_4dhmb")
+falloff_start = 0.5
+falloff_end = 1.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2ki5p"]
+noise_type = 0
+seed = -215146457
+frequency = 0.1
+
+[sub_resource type="Resource" id="Resource_k63cl"]
+script = ExtResource("5_nafeu")
+type = 0
+tilemap_layer = 0
+source_id = 1
+atlas_coord = Vector2i(0, 0)
+alternative_tile = 0
+id = ""
+layer = 0
+
+[sub_resource type="Resource" id="Resource_5nk8i"]
+resource_name = "grass"
+script = ExtResource("4_pm0av")
+title = "grass"
+tile = SubResource("Resource_k63cl")
+min = -0.3
+max = 1.0
+
+[sub_resource type="Resource" id="Resource_0xrky"]
+script = ExtResource("5_nafeu")
+type = 0
+tilemap_layer = 0
+source_id = 1
+atlas_coord = Vector2i(1, 0)
+alternative_tile = 0
+id = ""
+layer = 0
+
+[sub_resource type="Resource" id="Resource_3kq6v"]
+resource_name = "sand"
+script = ExtResource("4_pm0av")
+title = "sand"
+tile = SubResource("Resource_0xrky")
+min = -0.5
+max = -0.3
+
+[sub_resource type="Resource" id="Resource_m8ba3"]
+script = ExtResource("5_nafeu")
+type = 0
+tilemap_layer = 0
+source_id = 1
+atlas_coord = Vector2i(2, 0)
+alternative_tile = 0
+id = ""
+layer = 0
+
+[sub_resource type="Resource" id="Resource_v63lb"]
+resource_name = "water"
+script = ExtResource("4_pm0av")
+title = "water"
+tile = SubResource("Resource_m8ba3")
+min = -1.0
+max = -0.5
+
+[sub_resource type="Resource" id="Resource_qcun6"]
+script = ExtResource("5_nafeu")
+type = 0
+tilemap_layer = 1
+source_id = 2
+atlas_coord = Vector2i(0, 0)
+alternative_tile = 0
+id = ""
+layer = 1
+
+[sub_resource type="Resource" id="Resource_nhjiu"]
+resource_name = "grassShadow"
+script = ExtResource("4_pm0av")
+title = "grassShadow"
+tile = SubResource("Resource_qcun6")
+min = -0.3
+max = 1.0
+
+[sub_resource type="Resource" id="Resource_erkmk"]
+script = ExtResource("5_nafeu")
+type = 0
+tilemap_layer = 1
+source_id = 2
+atlas_coord = Vector2i(1, 0)
+alternative_tile = 0
+id = ""
+layer = 1
+
+[sub_resource type="Resource" id="Resource_2j6np"]
+resource_name = "sandShadow"
+script = ExtResource("4_pm0av")
+title = "sandShadow"
+tile = SubResource("Resource_erkmk")
+min = -0.5
+max = -0.3
+
+[sub_resource type="Resource" id="Resource_l4tk0"]
+script = ExtResource("5_nafeu")
+type = 0
+tilemap_layer = 1
+source_id = 2
+atlas_coord = Vector2i(2, 0)
+alternative_tile = 0
+id = ""
+layer = 1
+
+[sub_resource type="Resource" id="Resource_svu7p"]
+resource_name = "waterShadow"
+script = ExtResource("4_pm0av")
+title = "waterShadow"
+tile = SubResource("Resource_l4tk0")
+min = -1.0
+max = -0.5
+
+[sub_resource type="Resource" id="Resource_ueadr"]
+script = ExtResource("5_nafeu")
+type = 0
+tilemap_layer = 2
+source_id = 3
+atlas_coord = Vector2i(0, 0)
+alternative_tile = 0
+id = ""
+layer = 2
+
+[sub_resource type="Resource" id="Resource_yr8nh"]
+resource_name = "grassblack"
+script = ExtResource("4_pm0av")
+title = "grassblack"
+tile = SubResource("Resource_ueadr")
+min = -0.3
+max = 1.0
+
+[sub_resource type="Resource" id="Resource_o7yjb"]
+script = ExtResource("5_nafeu")
+type = 0
+tilemap_layer = 2
+source_id = 3
+atlas_coord = Vector2i(1, 0)
+alternative_tile = 0
+id = ""
+layer = 2
+
+[sub_resource type="Resource" id="Resource_gt6lm"]
+resource_name = "sandBlack"
+script = ExtResource("4_pm0av")
+title = "sandBlack"
+tile = SubResource("Resource_o7yjb")
+min = -0.5
+max = -0.3
+
+[sub_resource type="Resource" id="Resource_doopg"]
+script = ExtResource("5_nafeu")
+type = 0
+tilemap_layer = 2
+source_id = 3
+atlas_coord = Vector2i(2, 0)
+alternative_tile = 0
+id = ""
+layer = 2
+
+[sub_resource type="Resource" id="Resource_dysom"]
+resource_name = "waterBlack"
+script = ExtResource("4_pm0av")
+title = "waterBlack"
+tile = SubResource("Resource_doopg")
+min = -1.0
+max = -0.5
+
+[resource]
+resource_name = "Settings"
+script = ExtResource("3_qhdsw")
+tiles = Array[ExtResource("4_pm0av")]([SubResource("Resource_5nk8i"), SubResource("Resource_3kq6v"), SubResource("Resource_v63lb"), SubResource("Resource_nhjiu"), SubResource("Resource_2j6np"), SubResource("Resource_svu7p"), SubResource("Resource_yr8nh"), SubResource("Resource_gt6lm"), SubResource("Resource_dysom")])
+noise = SubResource("FastNoiseLite_2ki5p")
+infinite = false
+world_size = Vector2i(10, 10)
+falloff_enabled = true
+falloff_map = SubResource("Resource_rrreb")
+modifiers = Array[ExtResource("2_nthh4")]([])
