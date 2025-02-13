@@ -33,10 +33,14 @@ func load_bought_tiles():
 
 
 func surrounding_tiles_visibility(tile_position: Vector2i, tilemap: TileMapLayer):
-	print("clicked tiles surrounding tiles: ",tilemap.get_surrounding_cells(tile_position))
 	var visible_tiles = tilemap.get_surrounding_cells(tile_position)
+	print("clicked tiles surrounding tiles: ",visible_tiles)
 	
 	for tile in world_tiles.tiles:
-		if tile.position in visible_tiles and tile.tile_visible == false and tile.tile_bought == false:
-			tile.set_tile_visible(true)
-			change_tile(tile.position, 2, tile.atlas_coordinates)
+		if tile.position in visible_tiles:
+			print("Tarkista miksi ei näy viereiset tilet shadow tileinä vaikka ostettu")
+			print(tile.tile_visible, " ",tile.position, " ",tile.tile_bought)
+			if tile.tile_visible == false and tile.tile_bought == false:
+				tile.set_tile_visible(true)
+				print(tile.tile_visible, tile.position)
+				change_tile(tile.position, 2, tile.atlas_coordinates)
