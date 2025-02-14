@@ -8,3 +8,4 @@ func _ready():
 
 func _exit_tree() -> void:
 	TileManager.save_data()
+	InventoryManager.save_data()

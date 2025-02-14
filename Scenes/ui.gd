@@ -9,8 +9,7 @@ var RESOURCE_INVENTORY = preload("res://resources/inventory/resource_inventory.t
 var window_open: bool = false
 
 func _process(_delta):
-	if RESOURCE_INVENTORY and RESOURCE_INVENTORY.items.size() > 0:
-		label_wood.text = str(RESOURCE_INVENTORY.items[0].amount)
+	label_wood.text = str(InventoryManager.get_item_total_amount("Wood"))
 
 func open_tile_unlock_panel(tile: Tile, tilemap: TileMapLayer):
 	if window_open:

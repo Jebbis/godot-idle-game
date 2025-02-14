@@ -22,14 +22,13 @@ tile_unlock_panel = ExtResource("5_7ogyn")
 tile_building_type = ExtResource("3_x3yjw")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -279.0
-offset_top = 10.0
-offset_right = 279.0
-offset_bottom = 41.0
+offset_left = -287.0
+offset_top = 46.0
+offset_right = 271.0
+offset_bottom = 77.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0

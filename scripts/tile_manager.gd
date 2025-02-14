@@ -4,7 +4,6 @@ signal new_tile(coords: Vector2i, source_id: int, atlas_coords: Vector2i)
 
 const building_instance = preload("res://Scenes/building.tscn")
 
-
 var world_tiles: WorldTiles
 var tilemap: TileMapLayer
 
