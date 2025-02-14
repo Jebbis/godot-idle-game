@@ -1,0 +1,18 @@
+{
+  "column_properties": {
+    "res://resources/resourceItems/": {
+      "resource_local_to_scene": {
+        "visibility": 0
+      },
+      "resource_name": {
+        "visibility": 0
+      }
+    }
+  },
+  "recent_paths": [
+    "res://resources/resourceItems/"
+  ],
+  "table_functions": {
+
+  }
+}

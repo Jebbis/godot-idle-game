@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ResourceItem" load_steps=3 format=3 uid="uid://dp1kw1h8rnsn6"]
+
+[ext_resource type="Texture2D" uid="uid://y4lb57n20bck" path="res://Assets/resources/tile091.png" id="1_oblt4"]
+[ext_resource type="Script" path="res://resources/inventory/resource_item.gd" id="2_0k3vh"]
+
+[resource]
+script = ExtResource("2_0k3vh")
+item_name = "Ore"
+icon = ExtResource("1_oblt4")
+description = "Ore is ore"
+item_sort_order = 4.0

@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="WorldTiles" load_steps=3 format=3]
-
-[ext_resource type="Script" path="res://resources/tiles/world_tiles.gd" id="1_6ie83"]
-[ext_resource type="Script" path="res://resources/tiles/tile.gd" id="2_mouxx"]
-
-[resource]
-script = ExtResource("1_6ie83")
-tiles = Array[ExtResource("2_mouxx")]([])

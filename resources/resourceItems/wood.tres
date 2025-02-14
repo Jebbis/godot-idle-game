@@ -8,3 +8,4 @@ script = ExtResource("1_qk0t0")
 item_name = "Wood"
 icon = ExtResource("1_cxvki")
 description = "Wood is wood"
+item_sort_order = 1.0

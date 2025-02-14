@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ResourceItem" load_steps=3 format=3 uid="uid://cdur6g5wbdn6j"]
+
+[ext_resource type="Texture2D" uid="uid://dpnd78rtrscrj" path="res://Assets/resources/tile013.png" id="1_hqkt6"]
+[ext_resource type="Script" path="res://resources/inventory/resource_item.gd" id="2_jx2v5"]
+
+[resource]
+script = ExtResource("2_jx2v5")
+item_name = "Herb"
+icon = ExtResource("1_hqkt6")
+description = "Herb is herb"
+item_sort_order = 3.0

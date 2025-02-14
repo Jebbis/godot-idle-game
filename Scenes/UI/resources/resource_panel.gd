@@ -10,6 +10,7 @@ var resource_instances: Array = []
 
 func _ready():
 	inventory = InventoryManager.get_inventory()
+	inventory.items.sort_custom(func(a, b): return a.item.item_sort_order < b.item.item_sort_order)
 	instantiate_resources()
 
 
