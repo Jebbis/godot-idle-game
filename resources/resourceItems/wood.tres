@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="ResourceItem" load_steps=2 format=3 uid="uid://7gr3hojif75f"]
+[gd_resource type="Resource" script_class="ResourceItem" load_steps=3 format=3 uid="uid://7gr3hojif75f"]
 
+[ext_resource type="Texture2D" uid="uid://d1jsdn7q2trb4" path="res://Assets/resources/tile104.png" id="1_cxvki"]
 [ext_resource type="Script" path="res://resources/inventory/resource_item.gd" id="1_qk0t0"]
 
 [resource]
 script = ExtResource("1_qk0t0")
 item_name = "Wood"
+icon = ExtResource("1_cxvki")
 description = "Wood is wood"

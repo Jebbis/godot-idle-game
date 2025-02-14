@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Scenes/ui.gd" id="1_qe4p8"]
 [ext_resource type="Texture2D" uid="uid://d1jsdn7q2trb4" path="res://Assets/resources/tile104.png" id="2_jehcm"]
-[ext_resource type="PackedScene" uid="uid://kbstdis7tbcc" path="res://Scenes/UI/select_building_type.tscn" id="3_x3yjw"]
+[ext_resource type="PackedScene" uid="uid://kbstdis7tbcc" path="res://Scenes/UI/tiles/buildings/select_building_type.tscn" id="3_x3yjw"]
 [ext_resource type="Texture2D" uid="uid://y4lb57n20bck" path="res://Assets/resources/tile091.png" id="4_u4qvl"]
-[ext_resource type="PackedScene" uid="uid://dmhdss41gtogx" path="res://Scenes/UI/tile_unlock_panel.tscn" id="5_7ogyn"]
+[ext_resource type="PackedScene" uid="uid://dmhdss41gtogx" path="res://Scenes/UI/tiles/tile_unlock_panel.tscn" id="5_7ogyn"]
 [ext_resource type="Texture2D" uid="uid://dngeq8ihbfq1d" path="res://Assets/resources/tile058.png" id="5_d7wha"]
 [ext_resource type="Texture2D" uid="uid://13b1fowe1yh5" path="res://Assets/resources/tile151.png" id="6_snws4"]
 [ext_resource type="PackedScene" uid="uid://d3n0e4uojhl03" path="res://Scenes/UI/ui_overlay.tscn" id="8_wf8c5"]
@@ -22,6 +22,7 @@ tile_unlock_panel = ExtResource("5_7ogyn")
 tile_building_type = ExtResource("3_x3yjw")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

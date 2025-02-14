@@ -30,7 +30,7 @@ enabled=PackedStringArray("res://addons/gaea/plugin.cfg")
 
 [gui]
 
-theme/custom_font="res://Scenes/UI/fontTheme.tres"
+theme/custom_font="res://Assets/fonts/fontTheme.tres"
 
 [input]
 

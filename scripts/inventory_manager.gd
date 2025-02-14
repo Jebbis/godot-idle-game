@@ -3,6 +3,9 @@ extends Node
 var inventory: ResourceInventory
 const SAVEPATH: String = "C://Users//lasse//inventorySave.tres"
 
+func get_inventory(): return inventory
+
+
 func add_item(item: ResourceItem, amount: int = 1):
 	inventory.add_item(item, amount)
 	get_tree().call_group("inventory_ui", "refresh")

@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu4ynn66hp65b"]
+
+[ext_resource type="Script" path="res://Scenes/UI/resources/resource_panel.gd" id="1_oqe52"]
+[ext_resource type="PackedScene" uid="uid://b6xtjo617kfsu" path="res://Scenes/UI/resources/resource_item_panel.tscn" id="2_ybss8"]
+
+[node name="ResourcePanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oqe52")
+resource_item_panel = ExtResource("2_ybss8")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_right = 150
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

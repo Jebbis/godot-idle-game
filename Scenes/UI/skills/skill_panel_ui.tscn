@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=4 uid="uid://ce6dpd2cyno48"]
 
-[ext_resource type="Texture2D" uid="uid://d1jsdn7q2trb4" path="res://Assets/resources/tile104.png" id="1_dt0xr"]
-[ext_resource type="Texture2D" uid="uid://dngeq8ihbfq1d" path="res://Assets/resources/tile058.png" id="2_p0x6p"]
-[ext_resource type="Texture2D" uid="uid://tnm6amhtlhlp" path="res://Assets/resources/tile024.png" id="3_qxql6"]
-[ext_resource type="Texture2D" uid="uid://y4lb57n20bck" path="res://Assets/resources/tile091.png" id="4_n3mgr"]
-[ext_resource type="Texture2D" uid="uid://dpnd78rtrscrj" path="res://Assets/resources/tile013.png" id="5_5qkfn"]
+[ext_resource type="Texture2D" uid="uid://d1jsdn7q2trb4" path="res://Assets/resources/tile104.png" id="1_slf3g"]
+[ext_resource type="Texture2D" uid="uid://dngeq8ihbfq1d" path="res://Assets/resources/tile058.png" id="2_38n7r"]
+[ext_resource type="Texture2D" uid="uid://tnm6amhtlhlp" path="res://Assets/resources/tile024.png" id="3_an28c"]
+[ext_resource type="Texture2D" uid="uid://y4lb57n20bck" path="res://Assets/resources/tile091.png" id="4_rfnvm"]
+[ext_resource type="Texture2D" uid="uid://dpnd78rtrscrj" path="res://Assets/resources/tile013.png" id="5_3rymp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hris0"]
 bg_color = Color(0.137255, 0.164706, 0.207843, 1)
@@ -599,7 +599,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_dt0xr")
+texture = ExtResource("1_slf3g")
 stretch_mode = 3
 
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
@@ -630,7 +630,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_p0x6p")
+texture = ExtResource("2_38n7r")
 stretch_mode = 3
 
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer"]
@@ -662,7 +662,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer5/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("3_qxql6")
+texture = ExtResource("3_an28c")
 stretch_mode = 3
 
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/MarginContainer5/HBoxContainer"]
@@ -693,7 +693,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer3/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("4_n3mgr")
+texture = ExtResource("4_rfnvm")
 stretch_mode = 3
 
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/MarginContainer3/HBoxContainer"]
@@ -725,7 +725,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/MarginContainer4/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("5_5qkfn")
+texture = ExtResource("5_3rymp")
 stretch_mode = 3
 
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/MarginContainer4/HBoxContainer"]

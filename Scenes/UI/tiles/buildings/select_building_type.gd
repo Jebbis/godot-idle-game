@@ -5,7 +5,7 @@ extends Control
 @onready var close_button = $Panel/HBoxContainer/CloseButton
 
 var BUILDING_DATABASE = preload("res://resources/buildings/building_database.tres")
-var buy_building_button = preload("res://Scenes/UI/buy_building_button.tscn")
+var buy_building_button = preload("res://Scenes/UI/tiles/buildings/buy_building_button.tscn")
 
 var tile: Tile
 var parent

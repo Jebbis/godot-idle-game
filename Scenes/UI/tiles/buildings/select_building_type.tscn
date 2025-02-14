@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://kbstdis7tbcc"]
 
-[ext_resource type="Script" path="res://Scenes/UI/select_building_type.gd" id="1_agi8n"]
+[ext_resource type="Script" path="res://Scenes/UI/tiles/buildings/select_building_type.gd" id="1_agi8n"]
 
 [node name="SelectBuildingType" type="Control"]
 layout_mode = 3

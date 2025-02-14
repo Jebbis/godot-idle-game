@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d3n0e4uojhl03"]
 
-[ext_resource type="PackedScene" uid="uid://ce6dpd2cyno48" path="res://Scenes/UI/skill_panel_ui.tscn" id="1_0aris"]
-[ext_resource type="PackedScene" uid="uid://bu4ynn66hp65b" path="res://Scenes/UI/resource_panel.tscn" id="2_eifu1"]
+[ext_resource type="PackedScene" uid="uid://ce6dpd2cyno48" path="res://Scenes/UI/skills/skill_panel_ui.tscn" id="1_0aris"]
+[ext_resource type="PackedScene" uid="uid://bu4ynn66hp65b" path="res://Scenes/UI/resources/resource_panel.tscn" id="2_eifu1"]
 
 [node name="UIOverlay" type="Control"]
 layout_mode = 3
