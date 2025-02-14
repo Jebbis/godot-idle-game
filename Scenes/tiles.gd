@@ -5,11 +5,10 @@ extends Node2D
 
 var world_tiles: WorldTiles
 
-const SAVEPATH: String = "C://Users//lasse//save.tres"
 
 func _ready():
-	if FileAccess.file_exists(SAVEPATH):
-		world_tiles = load(SAVEPATH) as WorldTiles
+	TileManager.set_tilemap(ground)
+	world_tiles = TileManager.load_data()
 
 
 func _input(event):

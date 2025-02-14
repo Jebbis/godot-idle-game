@@ -38,6 +38,6 @@ zoom = Vector2(2, 2)
 
 [node name="UI" parent="." instance=ExtResource("3_mjyai")]
 
-[node name="BuildingContainer" type="Node2D" parent="."]
-
 [node name="TileManager" parent="." instance=ExtResource("5_kvyj4")]
+
+[node name="BuildingContainer" type="Node2D" parent="."]

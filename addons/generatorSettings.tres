@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://addons/gaea/generators/2D/noise_generator/noise_generator_data.gd" id="4_pm0av"]
 [ext_resource type="Script" path="res://addons/gaea/tile_info/tilemap_tile_info.gd" id="5_nafeu"]
 
-[sub_resource type="Image" id="Image_q4ptg"]
+[sub_resource type="Image" id="Image_ty2q0"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 89, 89, 89, 89, 89, 89, 89, 89, 89, 0, 89, 228, 228, 228, 228, 228, 228, 228, 89, 0, 89, 228, 255, 255, 255, 255, 255, 228, 89, 0, 89, 228, 255, 255, 255, 255, 255, 228, 89, 0, 89, 228, 255, 255, 255, 255, 255, 228, 89, 0, 89, 228, 255, 255, 255, 255, 255, 228, 89, 0, 89, 228, 255, 255, 255, 255, 255, 228, 89, 0, 89, 228, 228, 228, 228, 228, 228, 228, 89, 0, 89, 89, 89, 89, 89, 89, 89, 89, 89),
 "format": "Lum8",
@@ -15,12 +15,12 @@ data = {
 "width": 10
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_4dhmb"]
-image = SubResource("Image_q4ptg")
+[sub_resource type="ImageTexture" id="ImageTexture_356bd"]
+image = SubResource("Image_ty2q0")
 
 [sub_resource type="Resource" id="Resource_rrreb"]
 script = ExtResource("1_1baww")
-texture = SubResource("ImageTexture_4dhmb")
+texture = SubResource("ImageTexture_356bd")
 falloff_start = 0.5
 falloff_end = 1.0
 
