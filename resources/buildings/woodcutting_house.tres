@@ -1,13 +1,15 @@
-[gd_resource type="Resource" script_class="Building" load_steps=3 format=3 uid="uid://lvaopmakaaci"]
+[gd_resource type="Resource" script_class="Building" load_steps=4 format=3 uid="uid://lvaopmakaaci"]
 
 [ext_resource type="Resource" uid="uid://7gr3hojif75f" path="res://resources/resourceItems/wood.tres" id="1_6jx5y"]
 [ext_resource type="Script" path="res://resources/buildings/building.gd" id="1_i81rm"]
+[ext_resource type="Texture2D" uid="uid://7nxyo1es881w" path="res://Assets/buildings/woodcutting/woodcutting-house.png" id="1_uebep"]
 
 [resource]
 script = ExtResource("1_i81rm")
 allowed_tile_property = Array[int]([1])
-allowed_tile_type = 0
+allowed_tile_type = Array[int]([0])
 name = "Woodcutting House"
+icon = ExtResource("1_uebep")
 description = "House that gathers wood"
 output_item = ExtResource("1_6jx5y")
 base_amount = 1

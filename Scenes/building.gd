@@ -3,6 +3,7 @@ class_name BuildingInstance
 
 @export var building: Building  # Reference to the Building resource
 @export var tile: Tile  # Reference to the tile this building is on
+@onready var building_texture = $Sprite2D
 
 var timer: Timer
 
@@ -12,6 +13,10 @@ func _ready():
 		timer.wait_time = building.interval
 		timer.autostart = true
 		timer.timeout.connect(_produce)
+		building_texture.texture = building.icon
+		building_texture.scale.x = 0.234
+		building_texture.scale.y = 0.234
+		building_texture.position = tile.position*17
 		add_child(timer)
 
 func _produce():

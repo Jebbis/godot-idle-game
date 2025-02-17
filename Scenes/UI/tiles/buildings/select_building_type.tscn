@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://kbstdis7tbcc"]
+[gd_scene load_steps=3 format=3 uid="uid://kbstdis7tbcc"]
 
 [ext_resource type="Script" path="res://Scenes/UI/tiles/buildings/select_building_type.gd" id="1_agi8n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7rd5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="SelectBuildingType" type="Control"]
 layout_mode = 3
@@ -25,6 +28,7 @@ offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(100, 100)
+theme_override_styles/panel = SubResource("StyleBoxFlat_u7rd5")
 
 [node name="HBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -35,7 +39,13 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="Panel/HBoxContainer"]
+[node name="TileTypeName" type="Label" parent="Panel/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="TilePropertyName" type="Label" parent="Panel/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 horizontal_alignment = 1
 

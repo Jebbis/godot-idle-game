@@ -2,7 +2,7 @@ extends Resource
 class_name Tile
 
 @export var tile_type: TileType
-@export var tile_property: TileProperty
+@export var tile_property: TileProperty = TileProperty.PLAIN
 @export var building: Building = null  # Reference to the placed building (optional)
 @export var position: Vector2i
 @export var atlas_coordinates: Vector2i
@@ -10,7 +10,7 @@ class_name Tile
 @export var tile_visible: bool = false
 
 enum TileType { FOREST, SAND, WATER }
-enum TileProperty { RIVER, PLAIN, LAKE }
+enum TileProperty { NONE, RIVER, PLAIN, LAKE}
 
 func set_tile_visible(value: bool):
 	tile_visible = value

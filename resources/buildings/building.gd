@@ -2,7 +2,7 @@ extends Resource
 class_name Building
 
 @export var allowed_tile_property: Array[AllowedTileProperty]
-@export var allowed_tile_type: AllowedTileType
+@export var allowed_tile_type: Array[AllowedTileType]
 
 enum AllowedTileProperty { RIVER, PLAIN, LAKE }
 enum AllowedTileType { FOREST, SAND, WATER }

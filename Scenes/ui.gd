@@ -2,14 +2,13 @@ extends CanvasLayer
 
 @export var tile_unlock_panel: PackedScene
 @export var tile_building_type: PackedScene
-
-var RESOURCE_INVENTORY = preload("res://resources/inventory/resource_inventory.tres")
-@onready var label_wood = $HBoxContainer/Wood/LabelWood
+@onready var ui_overlay = $UIOverlay
 
 var window_open: bool = false
+var popup_window
 
-func _process(_delta):
-	label_wood.text = str(InventoryManager.get_item_total_amount("Wood"))
+func _ready():
+	popup_window = ui_overlay.find_child("Popup")
 
 func open_tile_unlock_panel(tile: Tile, tilemap: TileMapLayer):
 	if window_open:
@@ -23,12 +22,14 @@ func open_tile_unlock_panel(tile: Tile, tilemap: TileMapLayer):
 
 
 func open_tile_building_selection(tile: Tile):
+
 	if window_open:
 		return
 
 	var tile_building_type_instance = tile_building_type.instantiate()
 	tile_building_type_instance.tile = tile
-	add_child(tile_building_type_instance)
+	popup_window.add_child(tile_building_type_instance)
+	popup_window.set_bg_shadow()
 	window_open = true
 	
 func set_window_open():

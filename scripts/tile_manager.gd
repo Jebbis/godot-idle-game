@@ -71,7 +71,7 @@ func load_data():
 
 func init_starting_position():
 	var TileMapTiles = tilemap.get_used_cells()
-	print(TileMapTiles)
+	#print(TileMapTiles)
 	for cell in TileMapTiles:  # Loop through generated tiles
 		var tile = Tile.new()
 		var tileAtlasCoordinates = tilemap.get_cell_atlas_coords(cell)
@@ -79,7 +79,7 @@ func init_starting_position():
 		tile.atlas_coordinates = tileAtlasCoordinates
 		tile.initialize_tile_type(tileAtlasCoordinates)
 		if cell == Vector2i(0,0):
-			tile.tile_property = tile.TileProperty.RIVER
+			tile.tile_property = tile.TileProperty.PLAIN
 			tile.set_tile_bought(true)
 			tile.set_tile_visible(true)
 		world_tiles.tiles.append(tile)

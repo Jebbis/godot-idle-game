@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3n0e4uojhl03"]
+[gd_scene load_steps=4 format=3 uid="uid://d3n0e4uojhl03"]
 
 [ext_resource type="PackedScene" uid="uid://ce6dpd2cyno48" path="res://Scenes/UI/skills/skill_panel_ui.tscn" id="1_0aris"]
+[ext_resource type="Script" path="res://Scenes/UI/popup.gd" id="1_qt60x"]
 [ext_resource type="PackedScene" uid="uid://bu4ynn66hp65b" path="res://Scenes/UI/resources/resource_panel.tscn" id="2_eifu1"]
 
 [node name="UIOverlay" type="Control"]
@@ -11,8 +12,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Popup" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qt60x")
+
+[node name="BackgroundShadow" type="Panel" parent="Popup"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="SkillPanelUi" parent="." instance=ExtResource("1_0aris")]
 layout_mode = 1
+anchors_preset = 9
+anchor_right = 0.0
+grow_horizontal = 1
 
 [node name="ResourcePanel" parent="." instance=ExtResource("2_eifu1")]
 layout_mode = 1
+anchors_preset = 10
+anchor_bottom = 0.0
+grow_vertical = 1

@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="BuildingDatabase" load_steps=5 format=3 uid="uid://yd8u0s2j75y4"]
 
 [ext_resource type="Script" path="res://resources/buildings/building.gd" id="1_gdpfn"]
-[ext_resource type="Script" path="res://BuildingDatabase.gd" id="2_yfq6h"]
 [ext_resource type="Resource" uid="uid://cp116gdamavnj" path="res://resources/buildings/woodcutting_camp.tres" id="2_yx7hs"]
 [ext_resource type="Resource" uid="uid://lvaopmakaaci" path="res://resources/buildings/woodcutting_house.tres" id="3_83b8a"]
+[ext_resource type="Script" path="res://resources/buildings/BuildingDatabase.gd" id="4_ndm6v"]
 
 [resource]
-script = ExtResource("2_yfq6h")
+script = ExtResource("4_ndm6v")
 buildings = Array[ExtResource("1_gdpfn")]([ExtResource("2_yx7hs"), ExtResource("3_83b8a")])
