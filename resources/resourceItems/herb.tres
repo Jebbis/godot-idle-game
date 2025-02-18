@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="ResourceItem" load_steps=3 format=3 uid="uid://x6fo6bge1w2i"]
 
-[ext_resource type="Texture2D" uid="uid://dngeq8ihbfq1d" path="res://Assets/resources/tile058.png" id="1_n0ree"]
+[ext_resource type="Texture2D" uid="uid://dpnd78rtrscrj" path="res://Assets/resources/tile013.png" id="1_1vvc7"]
 [ext_resource type="Script" path="res://resources/inventory/resource_item.gd" id="2_x7dhm"]
 
 [resource]
 script = ExtResource("2_x7dhm")
-item_name = "Food"
-icon = ExtResource("1_n0ree")
-description = "Food is food"
-item_sort_order = 2.0
+item_name = "Herb"
+icon = ExtResource("1_1vvc7")
+description = "Herb is herb"
+item_sort_order = 3

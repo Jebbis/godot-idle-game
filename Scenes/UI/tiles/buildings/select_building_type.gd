@@ -1,44 +1,86 @@
 extends Control
 
-@onready var h_box_container = $Panel/HBoxContainer
-@onready var close_button = $Panel/HBoxContainer/CloseButton
 @onready var tile_type_name = %TileTypeName
 @onready var tile_property_name = %TilePropertyName
+@onready var building_container = %BuildingContainer
+@onready var margin_carousel_right = %MarginCarouselRight
+@onready var building_selection_button = %BuildingSelectionButton
+@onready var building_name = %BuildingName
 
-var BUILDING_DATABASE = preload("res://resources/buildings/building_database.tres")
-var buy_building_button = preload("res://Scenes/UI/tiles/buildings/buy_building_button.tscn")
+@export var building_instance: PackedScene
+
+#var BUILDING_DATABASE = preload("res://resources/buildings/building_database.tres")
+var BUILDING_DATABASE: Array[Building] = []
+const BUILDING_SELECTION_TEXTURE = preload("res://Scenes/UI/tiles/buildings/building_selection_texture.tscn")
 
 var tile: Tile
-var UI_parent
-var allowed_buildings: Array = []
+var current_building_index: int = 0
+var max_building_index: int
+var buildings: Array = []
 
 func _ready():
-	UI_parent = find_parent("UI")
+	load_buildings()
 	tile_type_name.text = Tile.TileType.keys()[tile.tile_type]
 	tile_property_name.text = Tile.TileProperty.keys()[tile.tile_property]
 	
-	#Check if this tile tpye and tile property combination have buildings with same combinations
-	for building in BUILDING_DATABASE.buildings:
+	create_buildings_to_ui()
+
+
+func update_selected_building_name():
+	if buildings.size() < 1:
+		return
+	building_name.text = buildings[current_building_index].name
+
+
+func load_buildings():
+	for file in DirAccess.get_files_at("res://resources/buildings/instances/"):
+		var building_file = "res://resources/buildings/instances/" + file
+		var building:Building = load(building_file) as Building
+		BUILDING_DATABASE.append(building)
+
+#Check if this tile tpye and tile property combination have buildings with same combinations
+func get_allowed_buildings():
+	var allowed_buildings: Array = []
+	for building in BUILDING_DATABASE:
 		var allowed_tile_types = building.allowed_tile_type.map(func(value): return Building.AllowedTileType.keys()[value])
 		var allowed_tile_properties = building.allowed_tile_property.map(func(value): return Building.AllowedTileProperty.keys()[value])
 		if Tile.TileType.keys()[tile.tile_type] in allowed_tile_types and Tile.TileProperty.keys()[tile.tile_property] in allowed_tile_properties:
 			allowed_buildings.append(building)
-	create_buttons_for_buildings()
+	return allowed_buildings
 
 
-func create_buttons_for_buildings():
+func create_buildings_to_ui():
 	if tile.building:
 		return
 		
-	for building in allowed_buildings:
-		var new_building_build_button = buy_building_button.instantiate()
-		new_building_build_button.tile = tile
-		new_building_build_button.building = building
-		h_box_container.add_child(new_building_build_button)
-	h_box_container.move_child(close_button, h_box_container.get_child_count() - 1)
+	buildings = get_allowed_buildings()
+	if buildings.size() < 1:
+		return
+		
+	max_building_index = buildings.size()
+	for building in buildings:
+		var new_building_texture = BUILDING_SELECTION_TEXTURE.instantiate()
+		new_building_texture.texture = building.icon
+		building_container.add_child(new_building_texture)
+	building_container.move_child(margin_carousel_right, building_container.get_child_count() - 1)
+	update_selected_building_name()
 
 
 func _on_close_button_pressed():
-	UI_parent.set_window_close()
+	find_parent("UI").set_window_close()
+	get_parent().set_bg_shadow()
+	self.queue_free()
+
+
+func _on_building_selection_button_pressed():
+	if buildings.size() < 1:
+		return
+	tile.building = buildings[current_building_index]
+	var new_building_instance = building_instance.instantiate()
+	new_building_instance.building = buildings[current_building_index]
+	new_building_instance.tile = tile
+	find_parent("UI").get_parent().get_node_or_null("BuildingContainer").add_child(new_building_instance)
+	print(tile.building.name, " bought")
+	find_parent("UI").set_window_close()
 	get_parent().set_bg_shadow()
 	self.queue_free()

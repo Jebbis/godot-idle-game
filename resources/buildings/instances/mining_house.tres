@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Building" load_steps=4 format=3 uid="uid://cknr3ix3r2gtm"]
+
+[ext_resource type="Texture2D" uid="uid://dypvgkabd4keb" path="res://Assets/buildings/mining/Mining House.png" id="1_537w6"]
+[ext_resource type="Resource" uid="uid://dp1kw1h8rnsn6" path="res://resources/resourceItems/ore.tres" id="2_r5p3h"]
+[ext_resource type="Script" path="res://resources/buildings/building.gd" id="3_te7ld"]
+
+[resource]
+script = ExtResource("3_te7ld")
+allowed_tile_property = Array[int]([1])
+allowed_tile_type = Array[int]([0, 1])
+name = "Mining House"
+icon = ExtResource("1_537w6")
+description = "House that gathers ores"
+output_item = ExtResource("2_r5p3h")
+base_amount = 1
+output_amount = 1
+interval = 2.0

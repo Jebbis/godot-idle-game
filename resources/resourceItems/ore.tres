@@ -8,4 +8,4 @@ script = ExtResource("2_0k3vh")
 item_name = "Ore"
 icon = ExtResource("1_oblt4")
 description = "Ore is ore"
-item_sort_order = 4.0
+item_sort_order = 2

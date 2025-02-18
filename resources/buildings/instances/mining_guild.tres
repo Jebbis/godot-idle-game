@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Building" load_steps=4 format=3 uid="uid://diwc40kc4gj3o"]
+
+[ext_resource type="Texture2D" uid="uid://c348a6cmb44ya" path="res://Assets/buildings/mining/Mining Guild.png" id="1_gvj4d"]
+[ext_resource type="Resource" uid="uid://dp1kw1h8rnsn6" path="res://resources/resourceItems/ore.tres" id="2_ndka2"]
+[ext_resource type="Script" path="res://resources/buildings/building.gd" id="3_mfdo4"]
+
+[resource]
+script = ExtResource("3_mfdo4")
+allowed_tile_property = Array[int]([1])
+allowed_tile_type = Array[int]([0, 1])
+name = "Mining Guild"
+icon = ExtResource("1_gvj4d")
+description = "House that gathers ores"
+output_item = ExtResource("2_ndka2")
+base_amount = 1
+output_amount = 1
+interval = 2.0

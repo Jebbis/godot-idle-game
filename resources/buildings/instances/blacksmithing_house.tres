@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Building" load_steps=4 format=3 uid="uid://dqmhtrehajoc0"]
+
+[ext_resource type="Texture2D" uid="uid://df7r0sq5ckieu" path="res://Assets/buildings/blacksmithing/Blacksmithing House.png" id="1_5xc0j"]
+[ext_resource type="Resource" uid="uid://cdur6g5wbdn6j" path="res://resources/resourceItems/coin.tres" id="2_swwu2"]
+[ext_resource type="Script" path="res://resources/buildings/building.gd" id="3_rrinm"]
+
+[resource]
+script = ExtResource("3_rrinm")
+allowed_tile_property = Array[int]([1])
+allowed_tile_type = Array[int]([0, 1])
+name = "Blacksmithing House"
+icon = ExtResource("1_5xc0j")
+description = "House that gathers coins"
+output_item = ExtResource("2_swwu2")
+base_amount = 1
+output_amount = 1
+interval = 2.0

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Building" load_steps=4 format=3 uid="uid://b2u3t5jgpewyc"]
+
+[ext_resource type="Texture2D" uid="uid://b1kf8i5t30ybu" path="res://Assets/buildings/fishing/Fishing House.png" id="1_gnqp8"]
+[ext_resource type="Resource" uid="uid://dhucm4dw8jata" path="res://resources/resourceItems/food.tres" id="2_v8si8"]
+[ext_resource type="Script" path="res://resources/buildings/building.gd" id="3_aecih"]
+
+[resource]
+script = ExtResource("3_aecih")
+allowed_tile_property = Array[int]([1])
+allowed_tile_type = Array[int]([2])
+name = "Fishing House"
+icon = ExtResource("1_gnqp8")
+description = "House that gathers wood"
+output_item = ExtResource("2_v8si8")
+base_amount = 1
+output_amount = 1
+interval = 2.0

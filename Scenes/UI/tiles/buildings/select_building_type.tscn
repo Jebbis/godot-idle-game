@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://kbstdis7tbcc"]
+[gd_scene load_steps=6 format=3 uid="uid://kbstdis7tbcc"]
 
 [ext_resource type="Script" path="res://Scenes/UI/tiles/buildings/select_building_type.gd" id="1_agi8n"]
+[ext_resource type="Texture2D" uid="uid://b3rugunxjpuk1" path="res://Assets/outline.png" id="2_e84kh"]
+[ext_resource type="PackedScene" uid="uid://bpt3sfstpclmd" path="res://Scenes/building.tscn" id="2_pxwt2"]
+[ext_resource type="Script" path="res://Scenes/UI/tiles/buildings/carusel_selection.gd" id="2_s4qyv"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7rd5"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vpjfp"]
 
 [node name="SelectBuildingType" type="Control"]
 layout_mode = 3
@@ -13,45 +15,156 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_agi8n")
+building_instance = ExtResource("2_pxwt2")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="CaruselSelection" type="Control" parent="."]
+custom_minimum_size = Vector2(500, 280)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -100.0
-offset_right = 100.0
-offset_bottom = 100.0
+offset_left = -250.0
+offset_top = -140.0
+offset_right = 250.0
+offset_bottom = 140.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(100, 100)
-theme_override_styles/panel = SubResource("StyleBoxFlat_u7rd5")
+script = ExtResource("2_s4qyv")
 
-[node name="HBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="SelectionMarker" type="Control" parent="CaruselSelection"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.5
+offset_top = -2.5
+offset_right = 2.5
+offset_bottom = 2.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CaruselSelection"]
+layout_mode = 2
+offset_right = 500.0
+offset_bottom = 280.0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CaruselSelection/MarginContainer"]
+layout_mode = 2
+
+[node name="TileTypeName" type="Label" parent="CaruselSelection/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="TilePropertyName" type="Label" parent="CaruselSelection/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CaruselSelection/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+
+[node name="TextureRect" type="TextureRect" parent="CaruselSelection/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_e84kh")
+
+[node name="PreviousButton" type="Button" parent="CaruselSelection/MarginContainer/VBoxContainer/HBoxContainer/TextureRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vpjfp")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_vpjfp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vpjfp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_vpjfp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vpjfp")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_vpjfp")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vpjfp")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_vpjfp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vpjfp")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vpjfp")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vpjfp")
 
-[node name="TileTypeName" type="Label" parent="Panel/HBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="CaruselSelection/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="BuildingContainer" type="HBoxContainer" parent="CaruselSelection/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/separation = 25
+
+[node name="MarginCarouselLeft" type="MarginContainer" parent="CaruselSelection/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/BuildingContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 70
+
+[node name="MarginCarouselRight" type="MarginContainer" parent="CaruselSelection/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/BuildingContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_right = 70
+
+[node name="TextureRect2" type="TextureRect" parent="CaruselSelection/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_e84kh")
+
+[node name="NextButton" type="Button" parent="CaruselSelection/MarginContainer/VBoxContainer/HBoxContainer/TextureRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vpjfp")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_vpjfp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vpjfp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_vpjfp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vpjfp")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_vpjfp")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vpjfp")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_vpjfp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vpjfp")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vpjfp")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vpjfp")
+
+[node name="BuildingName" type="Label" parent="CaruselSelection/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 horizontal_alignment = 1
 
-[node name="TilePropertyName" type="Label" parent="Panel/HBoxContainer"]
+[node name="BuildingSelectionButton" type="Button" parent="CaruselSelection/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-horizontal_alignment = 1
+size_flags_vertical = 4
+text = "Select building"
 
-[node name="CloseButton" type="Button" parent="Panel/HBoxContainer"]
+[node name="CloseButton" type="Button" parent="CaruselSelection/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Close
 "
 
-[connection signal="pressed" from="Panel/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="CaruselSelection/MarginContainer/VBoxContainer/HBoxContainer/TextureRect/PreviousButton" to="CaruselSelection" method="_on_previous_button_pressed"]
+[connection signal="pressed" from="CaruselSelection/MarginContainer/VBoxContainer/HBoxContainer/TextureRect2/NextButton" to="CaruselSelection" method="_on_next_button_pressed"]
+[connection signal="pressed" from="CaruselSelection/MarginContainer/VBoxContainer/BuildingSelectionButton" to="." method="_on_building_selection_button_pressed"]
+[connection signal="pressed" from="CaruselSelection/MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

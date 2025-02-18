@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqbllli4i6gj3"]
+
+[ext_resource type="Texture2D" uid="uid://cl1cshclyufgi" path="res://Assets/buildings/woodcutting/woodcutting-camp.png" id="1_lb033"]
+
+[node name="BuildingSelectionTexture" type="TextureRect"]
+texture = ExtResource("1_lb033")
