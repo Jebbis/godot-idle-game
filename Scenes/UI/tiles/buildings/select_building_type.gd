@@ -1,5 +1,7 @@
 extends Control
 
+@onready var building_resource = %BuildingResource
+@onready var building_resource_amount = %BuildingResourceAmount
 @onready var tile_type_name = %TileTypeName
 @onready var tile_property_name = %TilePropertyName
 @onready var building_container = %BuildingContainer
@@ -26,10 +28,12 @@ func _ready():
 	create_buildings_to_ui()
 
 
-func update_selected_building_name():
+func update_selected_building():
 	if buildings.size() < 1:
 		return
 	building_name.text = buildings[current_building_index].name
+	building_resource.text = buildings[current_building_index].output_item.item_name
+	building_resource_amount.text = str(buildings[current_building_index].output_amount)
 
 
 func load_buildings():
@@ -63,7 +67,7 @@ func create_buildings_to_ui():
 		new_building_texture.texture = building.icon
 		building_container.add_child(new_building_texture)
 	building_container.move_child(margin_carousel_right, building_container.get_child_count() - 1)
-	update_selected_building_name()
+	update_selected_building()
 
 
 func _on_close_button_pressed():

@@ -13,5 +13,5 @@ icon = ExtResource("1_gvj4d")
 description = "House that gathers ores"
 output_item = ExtResource("2_ndka2")
 base_amount = 1
-output_amount = 1
+output_amount = 10
 interval = 2.0

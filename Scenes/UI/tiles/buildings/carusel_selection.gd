@@ -21,7 +21,7 @@ func _on_previous_button_pressed():
 		return
 	index = index - 1
 	parent.current_building_index = index
-	parent.update_selected_building_name()
+	parent.update_selected_building()
 	var scrollValue = target_scroll - _get_space_between()
 	
 	await _tween_scroll(scrollValue)
@@ -33,7 +33,7 @@ func _on_next_button_pressed():
 		return
 	index = index + 1
 	parent.current_building_index = index
-	parent.update_selected_building_name()
+	parent.update_selected_building()
 	var scrollValue = target_scroll + _get_space_between()
 	
 	await _tween_scroll(scrollValue)

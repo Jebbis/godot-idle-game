@@ -23,6 +23,7 @@ script = ExtResource("1_qt60x")
 
 [node name="BackgroundShadow" type="Panel" parent="Popup"]
 unique_name_in_owner = true
+modulate = Color(0.122252, 0.122252, 0.122252, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

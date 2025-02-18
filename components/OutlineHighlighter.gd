@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var ground = $"../Tiles/Ground"
+@onready var ui = $"../UI"
 
 var outline_tile_pos = Vector2i(-1, -1)  # Keeps track of the current highlighted tile
 var outline_sprite = null  # Reference to the outline sprite
@@ -17,6 +18,8 @@ func _process(_delta):
 	update_outline()
 
 func update_outline():
+	if ui.window_open:
+		return
 	var tile_pos = ground.local_to_map(get_global_mouse_position())  # Get tile position under mouse
 
 	# Only update if the hovered tile has changed
