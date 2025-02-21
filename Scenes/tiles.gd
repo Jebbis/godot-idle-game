@@ -22,5 +22,8 @@ func _input(event):
 				break
 		if tile and tile.tile_visible == true and tile.tile_bought == false:
 			ui.open_tile_unlock_panel(tile, ground)
-		if tile and tile.tile_bought == true and tile.tile_visible == true:
+		if tile and tile.tile_bought == true and tile.tile_visible == true and tile.building == null:
+			print(tile.building)
 			ui.open_tile_building_selection(tile)
+		if tile and tile.tile_bought == true and tile.tile_visible == true and tile.building:
+			ui.open_tile_building_view(tile)

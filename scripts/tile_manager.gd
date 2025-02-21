@@ -14,7 +14,6 @@ func change_tile(coords: Vector2i, source_id: int, atlas_coords: Vector2i):
 
 
 func buy_new_tile(clicked_tile: Vector2i):
-	print("t")
 	for tile in world_tiles.tiles:
 		if tile.position == clicked_tile:
 			tile.set_tile_bought(true)

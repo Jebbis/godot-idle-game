@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @export var tile_unlock_panel: PackedScene
 @export var tile_building_type: PackedScene
+@export var view_tile_building: PackedScene
 @onready var ui_overlay = $UIOverlay
 
 var window_open: bool = false
@@ -22,7 +23,6 @@ func open_tile_unlock_panel(tile: Tile, tilemap: TileMapLayer):
 
 
 func open_tile_building_selection(tile: Tile):
-
 	if window_open:
 		return
 
@@ -31,7 +31,18 @@ func open_tile_building_selection(tile: Tile):
 	popup_window.add_child(tile_building_type_instance)
 	popup_window.set_bg_shadow()
 	window_open = true
-	
+
+
+func open_tile_building_view(tile: Tile):
+	if window_open:
+		return
+
+	var view_tile_building_instance = view_tile_building.instantiate()
+	popup_window.add_child(view_tile_building_instance)
+	view_tile_building_instance.set_properties(tile)
+	popup_window.set_bg_shadow()
+	window_open = true
+
 func set_window_open():
 	window_open = true
 

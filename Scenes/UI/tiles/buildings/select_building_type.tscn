@@ -143,12 +143,12 @@ theme_override_constants/separation = 25
 
 [node name="MarginCarouselLeft" type="MarginContainer" parent="CaruselSelection/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/BuildingContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 70
+theme_override_constants/margin_left = 90
 
 [node name="MarginCarouselRight" type="MarginContainer" parent="CaruselSelection/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/BuildingContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/margin_right = 70
+theme_override_constants/margin_right = 90
 
 [node name="TextureRect2" type="TextureRect" parent="CaruselSelection/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2

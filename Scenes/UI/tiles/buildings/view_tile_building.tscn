@@ -1,0 +1,264 @@
+[gd_scene load_steps=9 format=3 uid="uid://bl2g84tnirusa"]
+
+[ext_resource type="Script" path="res://Scenes/UI/tiles/buildings/view_tile_building.gd" id="1_h7k5c"]
+[ext_resource type="Texture2D" uid="uid://df7r0sq5ckieu" path="res://Assets/buildings/blacksmithing/Blacksmithing House.png" id="1_ml1b6"]
+[ext_resource type="Texture2D" uid="uid://13b1fowe1yh5" path="res://Assets/resources/tile151.png" id="2_gxtnk"]
+[ext_resource type="Texture2D" uid="uid://dpnd78rtrscrj" path="res://Assets/resources/tile013.png" id="3_na5ur"]
+[ext_resource type="Texture2D" uid="uid://dudjljjs3ygdo" path="res://Assets/resources/tile150.png" id="3_vl6ra"]
+[ext_resource type="Texture2D" uid="uid://bkxw3j071pa4p" path="res://Assets/resources/tile149.png" id="4_dq5dh"]
+[ext_resource type="Texture2D" uid="uid://tnm6amhtlhlp" path="res://Assets/resources/tile024.png" id="5_8v2my"]
+[ext_resource type="Texture2D" uid="uid://qk43dh5756pq" path="res://Assets/resources/tile009.png" id="5_i7mkm"]
+
+[node name="ViewTileBuilding" type="Control"]
+custom_minimum_size = Vector2(700, 425)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -212.5
+offset_right = 350.0
+offset_bottom = 212.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h7k5c")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LeftPanel" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="BuildingIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPanel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_ml1b6")
+
+[node name="BuildingName" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPanel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+text = "Blacksmithing house
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="BuildingLevel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPanel"]
+layout_mode = 2
+text = "Level 14
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="NextLevelUnlock" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPanel"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Next level unlocks:"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPanel"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPanel/HBoxContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_i7mkm")
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPanel/HBoxContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_na5ur")
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPanel/HBoxContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_8v2my")
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="MidPanel" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MidPanel"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Craft"
+vertical_alignment = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MidPanel"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MidPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MidPanel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/MidPanel/ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("2_gxtnk")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MidPanel/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Gold coin
+10 bars"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MidPanel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/MidPanel/ScrollContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("3_vl6ra")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MidPanel/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Silver coin
+5 bars"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MidPanel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/MidPanel/ScrollContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_dq5dh")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MidPanel/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Copper coin
+2 bars"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MidPanel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/MidPanel/ScrollContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("5_i7mkm")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MidPanel/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Weed whip
+12 bars"
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/MidPanel"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/MidPanel"]
+layout_mode = 2
+text = "Confirm craft
+10 bars"
+
+[node name="Control2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="RightPanel" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Upgrade to level 15"
+vertical_alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("2_gxtnk")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Production rate:
+700 + 100 per hour"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("2_gxtnk")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Production speed:
+2 + 1"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("5_8v2my")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Blacksmithing xp:
+20 + 5 per hour"
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel"]
+layout_mode = 2
+text = "Confirm upgrade
+500 coins"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Close"
