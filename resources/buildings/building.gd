@@ -12,6 +12,7 @@ enum AllowedTileType { FOREST, SAND, WATER }
 @export var description: String = ""
 
 @export var output_item: ResourceItem  # Resource type to produce
+@export var level: int = 1
 @export var base_amount: int = 5
 @export var output_amount: int = 5
 @export var interval: float = 10.0  # Time in seconds per cycle

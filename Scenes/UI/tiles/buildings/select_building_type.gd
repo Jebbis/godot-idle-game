@@ -11,7 +11,6 @@ extends Control
 
 @export var building_instance: PackedScene
 
-#var BUILDING_DATABASE = preload("res://resources/buildings/building_database.tres")
 var BUILDING_DATABASE: Array[Building] = []
 const BUILDING_SELECTION_TEXTURE = preload("res://Scenes/UI/tiles/buildings/building_selection_texture.tscn")
 
@@ -28,6 +27,7 @@ func _ready():
 	create_buildings_to_ui()
 
 
+#Updates the currently selected buildings information
 func update_selected_building():
 	if buildings.size() < 1:
 		return
@@ -36,11 +36,13 @@ func update_selected_building():
 	building_resource_amount.text = str(buildings[current_building_index].output_amount)
 
 
+#Loads all the buildings to filter from
 func load_buildings():
 	for file in DirAccess.get_files_at("res://resources/buildings/instances/"):
 		var building_file = "res://resources/buildings/instances/" + file
 		var building:Building = load(building_file) as Building
 		BUILDING_DATABASE.append(building)
+
 
 #Check if this tile tpye and tile property combination have buildings with same combinations
 func get_allowed_buildings():
@@ -53,6 +55,7 @@ func get_allowed_buildings():
 	return allowed_buildings
 
 
+#Creates building visuals to building carousel
 func create_buildings_to_ui():
 	if tile.building:
 		return
@@ -79,12 +82,18 @@ func _on_close_button_pressed():
 func _on_building_selection_button_pressed():
 	if buildings.size() < 1:
 		return
-	tile.building = buildings[current_building_index]
+	
+	var new_building_resource = buildings[current_building_index].duplicate()
+	tile.building = new_building_resource
+	
 	var new_building_instance = building_instance.instantiate()
-	new_building_instance.building = buildings[current_building_index]
+	new_building_instance.building = new_building_resource
 	new_building_instance.tile = tile
+	
 	find_parent("UI").get_parent().get_node_or_null("BuildingContainer").add_child(new_building_instance)
 	print(tile.building.name, " bought")
+	
+	#Close ui
 	find_parent("UI").set_window_close()
 	get_parent().set_bg_shadow()
 	self.queue_free()

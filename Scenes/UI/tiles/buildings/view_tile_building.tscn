@@ -67,6 +67,7 @@ horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="BuildingLevel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/LeftPanel"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Level 14
 "
@@ -251,14 +252,17 @@ text = "Blacksmithing xp:
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel"]
+[node name="UpgradeBuilding" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/RightPanel"]
 layout_mode = 2
 text = "Confirm upgrade
 500 coins"
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="CloseButton" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "Close"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/RightPanel/UpgradeBuilding" to="." method="_on_upgrade_building_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
